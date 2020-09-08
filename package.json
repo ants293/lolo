@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ants293/lolo#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "request": "^2.88.2"
   }
 }
