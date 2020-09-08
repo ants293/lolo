@@ -1,7 +1,10 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios';
 
-function App() {
+export default function App() {
+  requestArticles();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -21,4 +24,12 @@ function App() {
   );
 }
 
-export default App;
+async function requestArticles() {
+  try {
+    const response = await axios.get('http://localhost:5000/api');
+    console.log(response);
+  } catch {
+
+  }
+
+}
