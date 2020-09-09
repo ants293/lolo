@@ -17,6 +17,7 @@ app.use((request, response, next) => {
 
 app.get('/api', async (request, response) => {
     const postFeedResponse = await getPosts('https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss');
+    response.set('Content-Type', 'application/rss+xml');
     response.send(postFeedResponse);
 });
 
