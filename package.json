@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
+    "watch": "nodemon server/",
     "build": "cd client/ && npm install && npm run build"
   },
   "repository": {
@@ -18,8 +19,11 @@
   "homepage": "https://github.com/ants293/lolo#readme",
   "description": "",
   "dependencies": {
+    "@postlight/mercury-parser": "^2.2.0",
     "axios": "^0.20.0",
     "express": "^4.17.1",
-    "request": "^2.88.2"
+    "nodemon": "^2.0.4",
+    "request": "^2.88.2",
+    "xml-js": "^1.6.11"
   }
 }

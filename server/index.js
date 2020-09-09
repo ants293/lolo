@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const requestLib = require('request');
-
+const xmljs = require('xml-js');
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -17,8 +17,12 @@ app.use((request, response, next) => {
 
 app.get('/api', async (request, response) => {
     const postFeedResponse = await getPosts('https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss');
-    response.set('Content-Type', 'application/rss+xml');
-    response.send(postFeedResponse);
+
+    const result = JSON.parse(xmljs.xml2json(postFeedResponse, {compact: true, spaces: 2}));
+
+    response.set('Content-Type', 'application/json');
+    response.send(result.rss.channel.item);
+
 });
 
 app.get('*', function(request, response) {
