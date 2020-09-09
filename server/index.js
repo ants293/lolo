@@ -1,7 +1,9 @@
-import path from 'path';
-import express from 'express';
-import request from 'request';
-import xmljs from 'xml-js'
+const path = require('path');
+const xmljs = require('xml-js');
+const express = require('express');
+const requestLib = require('request');
+const apiRoutes = require('./api');
+
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -15,7 +17,9 @@ app.use((request, response, next) => {
     next();
 });
 
-app.get('/api', async (request, response) => {
+app.use('/api', apiRoutes);
+
+/*app.get('/api', async (request, response) => {
     const postFeedResponse = await getPosts('https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss');
 
     const result = JSON.parse(xmljs.xml2json(postFeedResponse, {compact: true, spaces: 2}));
@@ -27,11 +31,11 @@ app.get('/api', async (request, response) => {
 
 app.get('/', function(request, response) {
     response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
-});
+});*/
 
 function getPosts(url) {
     return new Promise((resolve, reject) => {
-        request(url, (error, response, body) => {
+        requestLib(url, (error, response, body) => {
             if(error) reject(error)
 
             else resolve(body)
