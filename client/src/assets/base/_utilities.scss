@@ -1,0 +1,13 @@
+.d-block {display: block!important;}
+.d-inline-block {display: inline-block!important;}
+.d-none {display: none!important;}
+.opacity-none {opacity: 0!important;}
+
+@each $pointName, $inWidth in $breakPoints {
+  @media(min-width: $inWidth) {
+    .d-block-#{$pointName} {display: block!important;}
+    .d-inline-block-#{$pointName} {display: inline-block!important;}
+    .d-none-#{$pointName} {display: none!important;}
+    .opacity-none-#{$pointName}  {opacity: 0!important;}
+  }
+}

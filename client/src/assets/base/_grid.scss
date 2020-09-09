@@ -1,0 +1,15 @@
+.flex-grid {display: flex;}
+
+@each $pointName, $inWidth in $breakPoints {
+  @media(min-width: $inWidth) {
+    .flex-grid-#{$pointName} {display: flex;}
+
+    @for $i from 1 through $gridSize {
+      .flex-grid-col-#{$pointName}-#{$i} {
+        flex: 0 0 ($i / $gridSize) * 100%;
+        max-width: ($i / $gridSize) * 100%;
+      }
+    }
+
+  }
+}
