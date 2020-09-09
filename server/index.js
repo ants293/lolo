@@ -1,7 +1,7 @@
-const path = require('path');
-const express = require('express');
-const requestLib = require('request');
-const xmljs = require('xml-js');
+import path from 'path';
+import express from 'express';
+import request from 'request';
+import xmljs from 'xml-js'
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -25,13 +25,13 @@ app.get('/api', async (request, response) => {
 
 });
 
-app.get('*', function(request, response) {
+app.get('/', function(request, response) {
     response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
 
 function getPosts(url) {
     return new Promise((resolve, reject) => {
-        requestLib(url, (error, response, body) => {
+        request(url, (error, response, body) => {
             if(error) reject(error)
 
             else resolve(body)
