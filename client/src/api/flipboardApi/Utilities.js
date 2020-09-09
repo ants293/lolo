@@ -1,7 +1,7 @@
 export const getTxtValue = (property) => {
-    return property._text;
+    return property && property._text || null;
 }
 
 export const getAttrValue = (property) => {
-    return property._attributes;
+    return property && property._attributes || null;
 }
