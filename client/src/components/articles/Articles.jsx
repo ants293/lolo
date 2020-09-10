@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import FilpboardApi from "../../api/flipboardApi/FilpboardApi";
 import Article from "./article/Article";
+import ArticleModal from "./articleModal/ArticleModal";
 
 export default function Articles() {
     const [articles, setArticles] = useState([]);
@@ -14,19 +15,22 @@ export default function Articles() {
     }, []);
 
     return (
-        <div className="article-list">
-            <div className="flex-grid flex-wrap">
-                {
-                    articles.map((article) => (
-                        <div className="flex-grid-col-4">
-                            <Article
-                                data={article}
-                            />
-                        </div>
-                    ))
-                }
+        <Fragment>
+            <ArticleModal />
+            <div className="article-list">
+                <div className="flex-grid flex-wrap">
+                    {
+                        articles.map((article) => (
+                            <div className="flex-grid-col-4">
+                                <Article
+                                    data={article}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
-        </div>
+        </Fragment>
     )
 
 }
