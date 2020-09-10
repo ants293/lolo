@@ -7,10 +7,18 @@ export default class FilpboardApi extends ApiService {
         return `${this.apiUrl}/flipboard`;
     }
 
-    static async getArticles() {
+    static async requestArticles() {
         return this.request({
             url: this.baseUrl,
             method: 'get'
+        });
+    }
+
+    static async requestArticle(payload) {
+        return this.request({
+            url: `${this.baseUrl}/article`,
+            method: 'get',
+            data: payload
         });
     }
 
