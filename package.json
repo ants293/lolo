@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server",
     "watch": "nodemon server/",
-    "build": "cd client/ && npm install && npm run build"
+    "build": "cd client/ && npm install && npm run build",
+    "lint": "eslint \"server/**/*.{js,jsx}\" --fix"
   },
   "repository": {
     "type": "git",
