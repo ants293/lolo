@@ -1,7 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const flipboardRoutes = require('./filpboard/routes');
+const express = require('express')
+const router = express.Router()
+const flipboardRoutes = require('./filpboard/routes')
 
-router.use('/flipboard', flipboardRoutes);
+router.use('/flipboard', flipboardRoutes)
 
-module.exports = router;
+module.exports = router

@@ -4,8 +4,13 @@ module.exports = {
         es6: true
     },
     extends: [
-        'plugin:react/recommended',
         'standard',
+        'eslint:recommended',
+        'plugin:react/recommended',
+        "plugin:react-hooks/recommended",
+    ],
+    plugins: [
+        'react',
     ],
     globals: {
         Atomics: 'readonly',
@@ -18,7 +23,7 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module'
     },
-    plugins: [
-        'react',
-    ],
+    rules: {
+        quotes: ['error', 'single']
+    },
 }
