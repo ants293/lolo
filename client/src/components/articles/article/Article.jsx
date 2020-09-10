@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function Article({ data, onArticleClick }) {
     return (
-        <div className="article-list__item clear" onClick={() => onArticleClick()}>
+        <div className="article-list__item d-flex d-block-md clear" onClick={() => onArticleClick()}>
             {getArticleImage(data.media)}
             <h2>{data.title}</h2>
-            <p>{data.description}</p>
+            <p className="d-none d-inline-block-md">{data.description}</p>
         </div>
     )
 }

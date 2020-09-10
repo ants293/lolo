@@ -4,12 +4,19 @@ const { FLIPBOARD_FEED_URL } = require('../constants');
 
 async function flipBoardList(request, response) {
     const postFeedResponse = await httpRequest(FLIPBOARD_FEED_URL);
-    const prasedResult = praseXMLtoJSON(postFeedResponse);
+    const parsedResult = parsedXMLtoJSON(postFeedResponse);
+
+    if (!parsedResult.rss || !parsedResult.rss.channel || !parsedResult.rss.channel.item) {
+        response.status(400);
+        response.send("Feed generating failed");
+        return;
+    }
+
     response.set('Content-Type', 'application/json');
-    response.send(prasedResult.rss.channel.item);
+    response.send(parsedResult.rss.channel.item);
 }
 
-const praseXMLtoJSON = (xmlResponse) => {
+const parsedXMLtoJSON = (xmlResponse) => {
     return JSON.parse(xmljs.xml2json(xmlResponse, {compact: true, spaces: 2}))
 }
 

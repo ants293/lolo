@@ -7,6 +7,7 @@ export default function Articles() {
     const [articles, setArticles] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [articleContent, setArticleContent] = useState(null);
+    const [lastRequestedLink, setLastRequestedLink] = useState(null);
 
     useEffect(() => {
         async function fetchArticles() {
@@ -18,6 +19,12 @@ export default function Articles() {
 
     async function onArticleClick(link) {
         setModalOpen(true);
+
+        if (lastRequestedLink === link) {
+            return;
+        }
+
+        setLastRequestedLink(link);
         setArticleContent(await requestArticle(link));
     }
 
@@ -33,7 +40,10 @@ export default function Articles() {
                 <div className="flex-grid flex-wrap">
                     {
                         articles.map((article) => (
-                            <div key={article.title} className="flex-grid-col-4">
+                            <div
+                                key={`${article.title}_${article.url}`}
+                                className="flex-grid-col-12 flex-grid-col-sm-6 flex-grid-col-lg-4 article-list__column"
+                            >
                                 <Article
                                     data={article}
                                     onArticleClick={() => onArticleClick(article.link)}

@@ -11,6 +11,7 @@ app.use((request, response, next) => {
     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
 app.use('/', express.static(buildPath));
 app.use('/api', apiRoutes);
 

@@ -2,15 +2,20 @@
 $font-lato: 'lato', serif;
 $mainFontFamily: $font-lato;
 
+$sm: "768px";
+$md: "992px";
+$lg: "1200px";
+$xl: "1500px";
+
 $breakPoints: (
-  "sm": "556px",
-  "md": "768px",
-  "lg": "992px",
-  "xl": "1200px"
+  "sm": $sm,
+  "md": $md,
+  "lg": $lg,
+  "xl": $xl
 );
 
 $gridSize: 12;
-$gridSpacing: 15px;
+$gridSpacing: 10px;
 
 $mainBorderRadius: 4px;
 

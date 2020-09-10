@@ -1,19 +1,13 @@
 .modal {
-  background-color: #fff;
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  bottom: 50px;
-  left: 50px;
+  height: 100%;
   padding: 15px 20px;
+  background-color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
   border-radius: $mainBorderRadius;
+  min-width: 300px;
 
-  &.modal--w-850 {
-    right: 0;
-    left: 50%;
+  &.modal--article {
     max-width: 950px;
-    transform: translateX(-50%);
   }
 }

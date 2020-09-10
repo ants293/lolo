@@ -6,7 +6,7 @@ export default function ArticleModal({ isOpen, setOpen, contents, title }) {
         <Modal
             isOpen={isOpen}
             setOpen={setOpen}
-            modalClasses={'modal--w-850'}
+            modalClasses={'modal--article'}
         >
             <div className="article-modal">
                 {title ? <h1 className="article-modal__title">{title}</h1> : null}
