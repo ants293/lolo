@@ -13,7 +13,7 @@ Article.propTypes = {
   onArticleClick: PropTypes.func.isRequired
 }
 
-export default function Article ({ data, onArticleClick }) {
+export default function Article({ data, onArticleClick }) {
   return (
     <div className="article-list__item d-flex d-block-md clear" onClick={() => onArticleClick()}>
       {getArticleImage(data.media)}
@@ -23,7 +23,7 @@ export default function Article ({ data, onArticleClick }) {
   )
 }
 
-function getArticleImage (media) {
+function getArticleImage(media) {
   if (!media) {
     return null
   }

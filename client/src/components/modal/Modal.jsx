@@ -10,7 +10,7 @@ Modal.propTypes = {
   setOpen: PropTypes.func.isRequired
 }
 
-export default function Modal ({
+export default function Modal({
   children,
   overlayClasses = null,
   modalClasses = null,
@@ -37,7 +37,7 @@ export default function Modal ({
   )
 }
 
-function onOutsideClick (e, modalRef, setOpen) {
+function onOutsideClick(e, modalRef, setOpen) {
   if (modalRef.current && !modalRef.current.contains(e.target)) {
     setOpen(false)
   }

@@ -6,14 +6,14 @@ export default class FilpboardApi extends ApiService {
     return `${this.apiUrl}/flipboard`
   }
 
-  static async requestArticles () {
+  static async requestArticles() {
     return this.request({
       url: this.baseUrl,
       method: 'get'
     })
   }
 
-  static async requestArticle (link) {
+  static async requestArticle(link) {
     return this.request({
       url: `${this.baseUrl}/article`,
       headers: { 'Content-Type': 'application/json' },
@@ -22,7 +22,7 @@ export default class FilpboardApi extends ApiService {
     })
   }
 
-  static mapResponse (data) {
+  static mapResponse(data) {
     return data.map((rawDataItem) => {
       return {
         title: getTxtValue(rawDataItem.title),

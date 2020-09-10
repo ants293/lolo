@@ -13,6 +13,7 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    "space-before-function-paren": "off",
     quotes: ['error', 'single'],
     'no-trailing-spaces': 'error'
   }

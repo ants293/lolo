@@ -10,7 +10,7 @@ ArticleModal.propTypes = {
   title: PropTypes.string
 }
 
-export default function ArticleModal ({
+export default function ArticleModal({
   isOpen = false,
   setOpen,
   contents = '',

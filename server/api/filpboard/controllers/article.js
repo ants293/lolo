@@ -1,6 +1,6 @@
 const mercuryParser = require('@postlight/mercury-parser')
 
-async function flipBoardArticle (request, response) {
+async function flipBoardArticle(request, response) {
   if (!request.body && !request.body.link) {
     response.status(400)
     response.send('Request cannot be empty!')
@@ -24,7 +24,7 @@ async function flipBoardArticle (request, response) {
   })
 }
 
-async function mercuryParse (link) {
+async function mercuryParse(link) {
   try {
     const response = await mercuryParser.parse(link)
 

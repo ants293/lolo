@@ -3,21 +3,21 @@ import FilpboardApi from '../../api/flipboardApi/FilpboardApi'
 import Article from './article/Article'
 import ArticleModal from './articleModal/ArticleModal'
 
-export default function Articles () {
+export default function Articles() {
   const [articles, setArticles] = useState([])
   const [modalOpen, setModalOpen] = useState(false)
   const [articleContent, setArticleContent] = useState(null)
   const [lastRequestedLink, setLastRequestedLink] = useState(null)
 
   useEffect(() => {
-    async function fetchArticles () {
+    async function fetchArticles() {
       setArticles(await requestArticlesFromApi())
     }
 
     fetchArticles()
   }, [])
 
-  async function onArticleClick (link) {
+  async function onArticleClick(link) {
     setModalOpen(true)
 
     if (lastRequestedLink === link) {
@@ -64,7 +64,7 @@ export default function Articles () {
   )
 }
 
-async function requestArticle (link) {
+async function requestArticle(link) {
   try {
     const response = await FilpboardApi.requestArticle(link)
     return response && response.data
@@ -73,7 +73,7 @@ async function requestArticle (link) {
   }
 }
 
-async function requestArticlesFromApi () {
+async function requestArticlesFromApi() {
   try {
     const flipBoardApiResponse = await FilpboardApi.requestArticles()
 

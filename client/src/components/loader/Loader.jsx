@@ -6,7 +6,7 @@ Loader.propTypes = {
   fixed: PropTypes.bool
 }
 
-export default function Loader ({ fixed = false }) {
+export default function Loader({ fixed = false }) {
   return (
     <div className={clsx(['loader', fixed && 'loader--fixated'])}>
       <div className="loader__slab" />
