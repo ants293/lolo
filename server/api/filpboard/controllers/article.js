@@ -17,7 +17,11 @@ async function flipBoardArticle(request, response) {
         return;
     }
 
-    response.send(parsedResponse.content);
+    response.send({
+        title: parsedResponse.title,
+        content: parsedResponse.content,
+        url: parsedResponse.url
+    });
 }
 
 async function mercuryParse(link) {

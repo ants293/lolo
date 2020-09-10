@@ -8,6 +8,7 @@
   padding: 15px 20px;
   overflow-x: hidden;
   overflow-y: auto;
+  border-radius: $mainBorderRadius;
 
   &.modal--w-850 {
     right: 0;

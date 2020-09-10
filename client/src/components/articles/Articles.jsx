@@ -26,7 +26,8 @@ export default function Articles() {
             <ArticleModal
                 isOpen={modalOpen}
                 setOpen={setModalOpen}
-                contents={articleContent}
+                title={articleContent && articleContent.title}
+                contents={articleContent && articleContent.content}
             />
             <div className="article-list">
                 <div className="flex-grid flex-wrap">
@@ -50,8 +51,7 @@ export default function Articles() {
 async function requestArticle(link) {
     try {
         const response = await FilpboardApi.requestArticle(link);
-
-        return response.data;
+        return response && response.data;
     } catch(error) {
         console.log(error);
     }

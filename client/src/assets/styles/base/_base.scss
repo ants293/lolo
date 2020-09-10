@@ -7,6 +7,7 @@ body {
   font-family: $mainFontFamily;
   font-size: 1rem;
   line-height: 1.5rem;
+  color: $mainFontColor;
 }
 
 img {
@@ -14,6 +15,35 @@ img {
   height: auto;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $mainTitleColor;
+}
+
+h1 {
+  font-size: $sizeH1;
+  line-height: $lineHeightH1;
+}
+
 h2 {
-  line-height: 2rem;
+  font-size: $sizeH2;
+  line-height: $lineHeightH2;
+}
+
+h3 {
+  font-size: $sizeH3;
+  line-height: $lineHeightH3;
+}
+
+h4 {
+  font-size: $sizeH4;
+  line-height: $lineHeightH4;
+}
+
+h5 {
+  font-size: $sizeH5;
+  line-height: $lineHeightH5;
 }

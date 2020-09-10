@@ -1,5 +1,10 @@
 .generated-content {
-  p {
+  max-width: $generatedContentMaxWidth;
+  margin-left: auto;
+  margin-right: auto;
+
+  figure {
+    float: right;
   }
 
   pre {
@@ -8,4 +13,19 @@
     padding: 10px 12px;
     border-radius: $mainBorderRadius;
   }
+
+  a {
+      color: $linkColor;
+      border-bottom: 1px solid transparent;
+      transition: border-color ease .3s;
+      font-weight: 600;
+      text-decoration: none;
+      outline: none;
+    &:focus,
+    &:hover,
+    &:active {
+      border-color: $linkColor;
+    }
+  }
+
 }
