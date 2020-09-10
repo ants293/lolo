@@ -14,11 +14,12 @@ export default class FilpboardApi extends ApiService {
         });
     }
 
-    static async requestArticle(payload) {
+    static async requestArticle(link) {
         return this.request({
             url: `${this.baseUrl}/article`,
-            method: 'get',
-            data: payload
+            headers: { "Content-Type": "application/json" },
+            method: 'post',
+            data: { link }
         });
     }
 

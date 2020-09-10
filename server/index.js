@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const apiRoutes = require('./api');
 const buildPath = './client/build';
+app.use(express.json());
 
 // Left mostly for test purposes
 app.use((request, response, next) => {
@@ -10,7 +10,7 @@ app.use((request, response, next) => {
     response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
+const apiRoutes = require('./api');
 app.use('/static', express.static(buildPath));
 app.use('/api', apiRoutes);
 
