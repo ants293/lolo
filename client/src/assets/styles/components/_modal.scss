@@ -5,4 +5,11 @@
   right: 50px;
   bottom: 50px;
   left: 50px;
+
+  &.modal--w-850 {
+    right: 0;
+    left: 50%;
+    max-width: 950px;
+    transform: translateX(-50%);
+  }
 }
