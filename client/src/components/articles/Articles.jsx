@@ -24,18 +24,25 @@ export default function Articles() {
             return;
         }
 
+        setArticleContent(null);
         setLastRequestedLink(link);
         setArticleContent(await requestArticle(link));
+
+        if (!articleContent && modalOpen === true) {
+            setModalOpen(false);
+        }
     }
 
     return (
         <Fragment>
+
             <ArticleModal
                 isOpen={modalOpen}
                 setOpen={setModalOpen}
                 title={articleContent && articleContent.title}
                 contents={articleContent && articleContent.content}
             />
+
             <div className="article-list">
                 <div className="flex-grid flex-wrap">
                     {

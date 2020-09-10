@@ -1,0 +1,37 @@
+.loader {
+  position: absolute;
+  height: 25px;
+  width: $loaderWidth;
+  top: auto;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -9px;
+  transform: translate(-50%);
+  z-index: 3;
+  @media(min-width: 768px) {
+    top: 50%;
+    bottom: auto;
+  }
+}
+
+.loader__slab {
+  position: absolute;
+  width: $loaderWidth / 4;
+  height: 100%;
+  background-color: $primaryColor;
+  animation: transitionHeight 1s infinite;
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      left: ($i * (($loaderWidth / 4) + 5));
+      animation-delay: $i * .1s;
+    }
+  }
+
+}
+
+@keyframes transitionHeight {
+  0% {transform: scaleY(1)}
+  50% {transform: scaleY(1.9)}
+  100% {transform: scaleY(1)}
+}

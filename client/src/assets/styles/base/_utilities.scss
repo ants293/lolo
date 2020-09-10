@@ -3,6 +3,7 @@
 .d-flex {display: flex!important;}
 .d-block {display: block!important;}
 .d-inline-block {display: inline-block!important;}
+.d-inline {display: inline!important;}
 .d-none {display: none!important;}
 .opacity-none {opacity: 0!important;}
 
@@ -11,6 +12,7 @@
     .d-flex-#{$pointName} {display: flex!important;}
     .d-block-#{$pointName} {display: block!important;}
     .d-inline-block-#{$pointName} {display: inline-block!important;}
+    .d-inline-#{$pointName} {display: inline!important;}
     .d-none-#{$pointName} {display: none!important;}
     .opacity-none-#{$pointName} {opacity: 0!important;}
   }

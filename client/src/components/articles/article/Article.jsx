@@ -5,7 +5,7 @@ export default function Article({ data, onArticleClick }) {
         <div className="article-list__item d-flex d-block-md clear" onClick={() => onArticleClick()}>
             {getArticleImage(data.media)}
             <h2>{data.title}</h2>
-            <p className="d-none d-inline-block-md">{data.description}</p>
+            <p className="d-none d-inline-md">{data.description}</p>
         </div>
     )
 }
