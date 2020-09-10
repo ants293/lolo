@@ -3,8 +3,8 @@ import Articles from "./components/articles/Articles";
 
 export default function App() {
   return (
-    <section>
+    <div className="container">
       <Articles />
-    </section>
+    </div>
   );
 }

@@ -1,4 +1,26 @@
-.flex-grid {display: flex;}
+.container {
+  padding-left: $gridSpacing;
+  padding-right: $gridSpacing;
+}
+
+.flex-grid {
+  display: flex;
+  margin-left: -$gridSpacing;
+  margin-right: -$gridSpacing;
+}
+
+.flex-wrap {
+  flex-wrap: wrap!important;
+}
+
+@for $i from 1 through $gridSize {
+  .flex-grid-col-#{$i} {
+    padding-left: $gridSpacing;
+    padding-right: $gridSpacing;
+    flex: 0 0 ($i / $gridSize) * 100%;
+    max-width: ($i / $gridSize) * 100%;
+  }
+}
 
 @each $pointName, $inWidth in $breakPoints {
   @media(min-width: $inWidth) {
@@ -6,10 +28,14 @@
 
     @for $i from 1 through $gridSize {
       .flex-grid-col-#{$pointName}-#{$i} {
+        padding-left: $gridSpacing;
+        padding-right: $gridSpacing;
         flex: 0 0 ($i / $gridSize) * 100%;
         max-width: ($i / $gridSize) * 100%;
       }
     }
+
+    .flex-wrap-#{$pointName} {flex-wrap: wrap!important;}
 
   }
 }

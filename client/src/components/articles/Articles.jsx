@@ -15,13 +15,17 @@ export default function Articles() {
 
     return (
         <div className="article-list">
-            {
-                articles.map((article) => (
-                    <Article
-                        data={article}
-                    />
-                ))
-            }
+            <div className="flex-grid flex-wrap">
+                {
+                    articles.map((article) => (
+                        <div className="flex-grid-col-4">
+                            <Article
+                                data={article}
+                            />
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 

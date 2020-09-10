@@ -1,7 +1,9 @@
-$gridSize: 12;
 $breakPoints: (
   "sm": "556px",
   "md": "768px",
   "lg": "992px",
   "xl": "1200px"
 );
+
+$gridSize: 12;
+$gridSpacing: 15px;

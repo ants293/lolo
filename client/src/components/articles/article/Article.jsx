@@ -1,9 +1,8 @@
 import React from 'react';
 
 export default function Article({ data }) {
-    console.log(data);
     return (
-        <div className="article-list__item">
+        <div className="article-list__item clear">
             {imageHandler(data.media)}
             <h2>{data.title}</h2>
             <p>{data.description}</p>
@@ -17,6 +16,8 @@ function imageHandler(media) {
     }
 
     return (
-        <img className="article-list__image" src={media.url} alt={media.title} />
+        <div className="article-list__image">
+            <img src={media.url} alt={media.title} />
+        </div>
     )
 }
