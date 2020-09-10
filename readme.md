@@ -8,6 +8,9 @@ In repo root run local server in port 5000:
 For the front-end development build:
 
     cd /client
+
+Create .env.local and add http://localhost:5000 to REACT_APP_NODE_SERVICE_URL key then
+
     npm install
     npm start
     
