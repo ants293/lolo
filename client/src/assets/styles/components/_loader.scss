@@ -8,10 +8,12 @@
   margin-left: -9px;
   transform: translate(-50%);
   z-index: 3;
-  @media(min-width: 768px) {
+
+  &.loader--fixated {
+    position: fixed;
     top: 50%;
-    bottom: auto;
   }
+
 }
 
 .loader__slab {

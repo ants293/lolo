@@ -7,7 +7,9 @@ export default function ArticleModal({ isOpen, setOpen, contents, title }) {
         <Fragment>
             {
                 !contents && isOpen ?
-                    <Loader/> :
+                    <Loader
+                        fixed={true}
+                    /> :
                     <Modal
                         isOpen={isOpen}
                         setOpen={setOpen}
