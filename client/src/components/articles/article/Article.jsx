@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Article({ data }) {
+export default function Article({ data, setModal }) {
     return (
-        <div className="article-list__item clear">
+        <div className="article-list__item clear" onClick={() => setModal(true)}>
             {imageHandler(data.media)}
             <h2>{data.title}</h2>
             <p>{data.description}</p>

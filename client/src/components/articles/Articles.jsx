@@ -5,6 +5,7 @@ import ArticleModal from "./articleModal/ArticleModal";
 
 export default function Articles() {
     const [articles, setArticles] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         async function fetchArticles() {
@@ -13,17 +14,22 @@ export default function Articles() {
 
         fetchArticles();
     }, []);
+    console.log("articles comp", modalOpen);
 
     return (
         <Fragment>
-            <ArticleModal />
+            <ArticleModal
+                isOpen={modalOpen}
+                setOpen={setModalOpen}
+            />
             <div className="article-list">
                 <div className="flex-grid flex-wrap">
                     {
                         articles.map((article) => (
-                            <div className="flex-grid-col-4">
+                            <div key={article.title} className="flex-grid-col-4">
                                 <Article
                                     data={article}
+                                    setModal={setModalOpen}
                                 />
                             </div>
                         ))
@@ -39,7 +45,7 @@ async function requestArticlesFromApi() {
     try {
         const flipBoardApiResponse = await FilpboardApi.getArticles();
 
-        return flipBoardApiResponse && FilpboardApi.mapResponse(flipBoardApiResponse.data) || [];
+        return (flipBoardApiResponse && FilpboardApi.mapResponse(flipBoardApiResponse.data)) || [];
     } catch(error) {
         console.log(error);
         return [];
